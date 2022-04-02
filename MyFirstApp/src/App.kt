@@ -21,4 +21,6 @@ fun main(args:Array<String>){
     }else{
         println("$x is not 20")
     }
+
+    println(if(x > 4) "x>4" else "x<4")
 }
