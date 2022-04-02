@@ -1,4 +1,4 @@
 # MyProjectKotlin
 language lessons review for Kotlin
 ## remark
-To remember points that I may have forgotten.
+refresh the memory again.
