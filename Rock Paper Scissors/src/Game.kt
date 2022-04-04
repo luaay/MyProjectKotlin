@@ -8,7 +8,9 @@ fun main(args:Array<String>){
 
     val gameChoice = getGameChoice(options)
 
-    var resul = timesthree(2)
+    val userChoice = getUserChoice(options)
+
+
 }
 
 fun getGameChoice(optionParam: Array<String>) =
@@ -20,7 +22,27 @@ fun getGameChoice(){
 
 fun getUserChoice(optionParam: Array<String>):String{
 
-    for(item in optionParam) print(" $item")
-    print(".")
+    var isValidChoice = false
+    var userChoice = ""
+
+    while (!isValidChoice){
+        print("Please enter one of the fillowing:")
+
+        for(item in optionParam) print(" $item")
+        print(".")
+
+        val userInput = readLine()
+
+        if (userInput != null && userInput in optionParam){
+
+            isValidChoice = true
+
+            userChoice = userInput
+        }
+
+        if (!isValidChoice) println("you must enter a vaild choice.")
+
+    }
+    return  userChoice
 
 }
