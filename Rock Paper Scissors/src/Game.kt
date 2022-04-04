@@ -10,6 +10,8 @@ fun main(args:Array<String>){
     val userChoice = getUserChoice(options)
 
     printResult(userChoice,gameChoice)
+
+    
 }
 
 fun getGameChoice(optionParam: Array<String>) =
@@ -59,4 +61,18 @@ fun printResult(userChoice:String, gameChoice: String){
     else result = "you lose"
 
     println("$result")
+}
+
+class Rectangle(var width: Int, var height: Int){
+
+    val isSquare: Boolean
+
+    get()=(width == height)
+
+    val area: Int
+    get()=(width * height)
+
+
+
+
 }
