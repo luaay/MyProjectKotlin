@@ -1,5 +1,4 @@
-
-
+import java.awt.Choice
 
 
 fun main(args:Array<String>){
@@ -10,7 +9,7 @@ fun main(args:Array<String>){
 
     val userChoice = getUserChoice(options)
 
-
+    printResult(userChoice,gameChoice)
 }
 
 fun getGameChoice(optionParam: Array<String>) =
@@ -31,7 +30,7 @@ fun getUserChoice(optionParam: Array<String>):String{
         for(item in optionParam) print(" $item")
         print(".")
 
-        val userInput = readLine()
+        val userInput = readLine().capitalize()
 
         if (userInput != null && userInput in optionParam){
 
@@ -45,4 +44,19 @@ fun getUserChoice(optionParam: Array<String>):String{
     }
     return  userChoice
 
+}
+
+fun printResult(userChoice:String, gameChoice: String){
+
+    val result: String
+
+    if ( userChoice == gameChoice) result = "Tie!"
+
+    else if ((userChoice == "Rock" && gameChoice == "Scissors")
+
+        || ( userChoice == "Paper" && gameChoice == "Rock")
+        || (userChoice == "Scissors" && gameChoice == "Paper")) result = "You win!"
+    else result = "you lose"
+
+    println("$result")
 }
